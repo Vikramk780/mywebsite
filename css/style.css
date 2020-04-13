@@ -102,9 +102,9 @@ a:hover{
   height: 200px;
 }
 .bottom-cloud{
-  position: absolute;
-  left: 500%;
-  bottom: 375%;
+  position: static;
+  left: 80px;
+  bottom: 60ppx;
   width: 250px;
   height: 200px;
 }
