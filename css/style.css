@@ -101,8 +101,8 @@ a:hover{
 }
 .bottom-cloud{
   position: absolute;
-  left: 9.375rem;
-  bottom: 6.25rem;
+  left: 150px;
+  bottom: 200px;
 }
 .btn {
    border-top: 1px solid #97f7a9;
