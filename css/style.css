@@ -72,6 +72,7 @@ hr{
   margin: auto;
   width: 70%;
   text-align: justify;
+  line-height: 2.5em;
 }
 .middle-container{
   margin: 100px 0;
