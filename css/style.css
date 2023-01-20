@@ -101,14 +101,14 @@ a:hover{
   right: 120px;
   top: 15px;
   width: 250px;
-  height: 150px;
+  height: 200px;
 }
 .bottom-cloud{
   position: absolute;
   left: 80px;
   bottom: 60ppx;
   width: 250px;
-  height: 150px;
+  height: 200px;
 }
 .btn {
    border-top: 1px solid #97f7a9;
