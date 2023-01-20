@@ -72,7 +72,7 @@ hr{
   margin: auto;
   width: 70%;
   text-align: justify;
-  line-height: 2.5em;
+  line-height: 2.1em;
 }
 .middle-container{
   margin: 100px 0;
@@ -101,7 +101,7 @@ a:hover{
   right: 120px;
   top: 15px;
   width: 250px;
-  height: 200px;
+  height: 150px;
 }
 .bottom-cloud{
   position: absolute;
