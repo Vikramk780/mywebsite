@@ -71,6 +71,7 @@ hr{
 .intro{
   margin: auto;
   width: 60%;
+  text-align: justify;
 }
 .middle-container{
   margin: 100px 0;
