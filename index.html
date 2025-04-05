@@ -7,31 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         font-family: 'Montserrat', sans-serif;
         margin: 0;
         background-color: #f4f4f4;
         color: #2d3436;
         line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease forwards;
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
       .top-container, .middle-container, .bottom-container {
         text-align: center;
-        padding: 50px 20px;
+        padding: 30px 20px;
       }
       .top-container {
         background: linear-gradient(to right, #00b894, #55efc4);
         color: white;
+        animation: gradientShift 10s ease infinite alternate;
+      }
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
       }
       .top-cloud, .bottom-cloud, .mountain {
         max-width: 100px;
         margin: 10px;
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
       }
       h1 {
         font-family: 'Sacramento', cursive;
         font-size: 4rem;
+        animation: fadeInUp 1s ease forwards;
       }
       h2, h3, h4 {
         margin: 20px 0;
+        animation: fadeInUp 1.2s ease forwards;
       }
       .profile img.imch {
         width: 180px;
@@ -40,6 +71,7 @@
         border: 5px solid #00cec9;
         box-shadow: 0 0 15px rgba(0, 206, 201, 0.6);
         transition: transform 0.3s ease-in-out;
+        animation: fadeInUp 1.4s ease forwards;
       }
       .profile img.imch:hover {
         transform: scale(1.05);
@@ -54,6 +86,7 @@
       }
       .intro li {
         margin: 10px 0;
+        animation: fadeInUp 1s ease forwards;
       }
       hr {
         border: none;
@@ -70,6 +103,7 @@
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         transition: transform 0.3s ease;
+        animation: fadeInUp 1.3s ease forwards;
       }
       .skill-row:hover {
         transform: translateY(-5px);
@@ -77,6 +111,7 @@
       .img1, .img2 {
         width: 100px;
         margin-bottom: 20px;
+        animation: fadeInUp 1.2s ease forwards;
       }
       .btn {
         background-color: #00b894;
@@ -87,6 +122,7 @@
         font-weight: bold;
         transition: all 0.3s ease-in-out;
         box-shadow: 0 0 10px rgba(0, 184, 148, 0.3);
+        animation: fadeInUp 1.2s ease forwards;
       }
       .btn:hover {
         background-color: #55efc4;
@@ -97,6 +133,7 @@
         background-color: #00b894;
         color: white;
         padding: 30px 20px;
+        animation: fadeInUp 1s ease forwards;
       }
       .bottom-container a {
         color: #ffffff;
