@@ -7,204 +7,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@400;600&family=Sacramento&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --primary-color: #00b894;
-        --secondary-color: #55efc4;
-        --text-dark: #2d3436;
-        --text-light: #ffffff;
-        --shadow: 0 4px 12px rgba(0,0,0,0.05);
-      }
-
       body {
         font-family: 'Montserrat', sans-serif;
         margin: 0;
         background-color: #f4f4f4;
-        color: var(--text-dark);
+        color: #2d3436;
         line-height: 1.6;
       }
-
+      .top-container, .middle-container, .bottom-container {
+        text-align: center;
+        padding: 50px 20px;
+      }
+      .top-container {
+        background: linear-gradient(to right, #00b894, #55efc4);
+        color: white;
+      }
+      .top-cloud, .bottom-cloud, .mountain {
+        max-width: 100px;
+        margin: 10px;
+      }
       h1 {
         font-family: 'Sacramento', cursive;
         font-size: 4rem;
-        margin: 0.5em 0;
       }
-
       h2, h3, h4 {
-        margin: 1.5em 0;
-        color: var(--primary-color);
+        margin: 20px 0;
       }
-
+      .profile img.imch {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 5px solid #00cec9;
+        box-shadow: 0 0 15px rgba(0, 206, 201, 0.6);
+        transition: transform 0.3s ease-in-out;
+      }
+      .profile img.imch:hover {
+        transform: scale(1.05);
+      }
       .intro {
         text-align: left;
         max-width: 900px;
         margin: 0 auto;
-        font-size: 1.1rem;
-        padding: 0 20px;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #2d3436;
       }
-
       .intro li {
-        margin: 15px 0;
-        padding-left: 1.5em;
-        position: relative;
+        margin: 10px 0;
       }
-
-      .intro li::before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: var(--secondary-color);
+      hr {
+        border: none;
+        height: 2px;
+        width: 80%;
+        margin: 50px auto;
+        background: linear-gradient(to right, #00b894, #55efc4);
+        opacity: 0.8;
       }
-
-      .top-container {
-        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-        color: var(--text-light);
-        padding: 100px 20px 150px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .middle-container {
-        padding: 80px 0;
-      }
-
-      .bottom-container {
-        background-color: var(--primary-color);
-        color: var(--text-light);
-        padding: 40px 20px;
-      }
-
-      .top-cloud, .bottom-cloud {
-        position: absolute;
-        max-width: 150px;
-        animation: float 4s infinite ease-in-out;
-      }
-
-      .top-cloud {
-        top: 20%;
-        left: 20%;
-      }
-
-      .bottom-cloud {
-        bottom: 40%;
-        right: 20%;
-      }
-
-      .mountain {
-        max-width: 600px;
-        width: 90%;
-        margin-top: 50px;
-      }
-
-      .profile {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .profile img.imch {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 5px solid var(--secondary-color);
-        box-shadow: var(--shadow);
-        transition: transform 0.3s ease;
-      }
-
-      .profile img.imch:hover {
-        transform: scale(1.05) rotate(5deg);
-      }
-
       .skill-row {
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 30px;
-        background: var(--text-light);
-        border-radius: 15px;
-        box-shadow: var(--shadow);
+        margin: 40px 0;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         transition: transform 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
       }
-
       .skill-row:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
       }
-
       .img1, .img2 {
-        width: 120px;
-        height: 120px;
-        object-fit: contain;
-        margin: 20px 0;
+        width: 100px;
+        margin-bottom: 20px;
       }
-
-      .contact-me {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 40px 20px;
-      }
-
       .btn {
-        display: inline-block;
-        background: var(--primary-color);
-        color: var(--text-light);
-        padding: 15px 40px;
+        background-color: #00b894;
+        color: white;
+        padding: 14px 28px;
+        text-decoration: none;
         border-radius: 30px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        margin: 20px 0;
-        border: 2px solid transparent;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px rgba(0, 184, 148, 0.3);
       }
-
       .btn:hover {
-        background: var(--text-light);
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-        transform: translateY(-3px);
+        background-color: #55efc4;
+        color: #2d3436;
+        box-shadow: 0 0 20px rgba(0, 184, 148, 0.6);
       }
-
+      .bottom-container {
+        background-color: #00b894;
+        color: white;
+        padding: 30px 20px;
+      }
       .bottom-container a {
-        color: var(--text-light);
-        margin: 0 20px;
+        color: #ffffff;
+        margin: 0 15px;
         text-decoration: none;
-        transition: color 0.3s ease;
+        font-weight: bold;
+        transition: color 0.3s, text-shadow 0.3s;
       }
-
       .bottom-container a:hover {
-        color: var(--secondary-color);
-      }
-
-      .copyr {
-        margin: 30px 0 0;
-        font-size: 0.9rem;
-      }
-
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-15px); }
-      }
-
-      @media (max-width: 768px) {
-        h1 { font-size: 3rem; }
-        h2 { font-size: 1.5rem; }
-        .top-cloud, .bottom-cloud { max-width: 100px; }
-        .intro { padding: 0 15px; font-size: 1rem; }
-        .skill-row { margin: 30px 15px; padding: 20px; }
+        color: #00cec9;
+        text-shadow: 0 0 5px #00cec9;
       }
     </style>
   </head>
   <body>
     <div class="top-container">
-      <img class="top-cloud" src="cloudeee.png" alt="Cloud graphic">
+      <img class="top-cloud" src="cloudeee.png" alt="">
       <h1>I' am Vikram.</h1>
       <h2>Software Test Engineer.</h2>
-      <img class="bottom-cloud" src="cloudeee.png" alt="Cloud graphic">
-      <img class="mountain" src="download-removebg-preview.png" alt="Mountain graphic">
+      <img class="bottom-cloud" src="cloudeee.png" alt="">
+      <img class="mountain" src="download-removebg-preview.png" alt="">
     </div>
 
     <div class="middle-container">
       <div class="profile">
-        <img class="imch" src="color.png" alt="Vikram Kamble profile photo">
+        <img class="imch" src="color.png" alt="">
         <h2>Hello.</h2>
         <ul class="intro">
           <li><strong>3 Years of Experience</strong> in <strong>Automation and Manual Software Testing</strong> with domains like "CloudOps Hyper-Automation" and "Personal Digital Storage" - (Web and Mobile app).</li>
@@ -233,22 +151,21 @@
       <div class="Skills">
         <h2>Roles And Responsibilities</h2>
         <div class="skill-row">
-          <img class="img1" src="PinClipart.com_clip-art-softwares_504814.png" alt="Software Testing icon">
-          <h3>Software Testing</h3>
+          <img class="img1" src="PinClipart.com_clip-art-softwares_504814.png" alt="">
+          <h3>Software Testing.</h3>
           <p class="skill1">Reviewing and validating user stories and requirements, executing all levels of testing (system, integration, regression), developing automation scripts, identifying software defects, and recommending improvements. Communicating updates and creating test documentation.</p>
         </div>
 
         <div class="skill-row">
-          <img class="img2" src="internet.png" alt="Objective icon">
-          <h3>Objective</h3>
+          <img class="img2" src="internet.png" alt="">
+          <h3>Objective.</h3>
           <p class="Objective">To secure a challenging role as a Software Test Engineer, utilizing my technical expertise, problem-solving skills, and experience in various testing methodologies to ensure the delivery of high-quality software products.</p>
         </div>
       </div>
 
       <hr>
-
       <div class="contact-me">
-        <h2>Get in Touch</h2>
+        <h2>Get in Touch.</h2>
         <h3>Passionate about Manual and Automation Testing</h3>
         <p class="intro2">Believe in professional Automation Testing</p>
         <a class="btn" href="mailto:kvikramautomationtesting@gmail.com">CONTACT ME</a>
@@ -259,7 +176,7 @@
       <a href="#">LinkedIn</a>
       <a href="#">Facebook</a>
       <a href="https://vikramk780.github.io/mywebsite/">Website</a>
-      <p class="copyr">© 2023 Vikram Kamble</p>
+      <p class="copyr">@ 2023 Vikram Kamble</p>
     </div>
   </body>
 </html>
