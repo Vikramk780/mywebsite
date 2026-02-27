@@ -1,40 +1,24 @@
 diff --git a/c:\Users\vikram\2026Projectt\index.html b/c:\Users\vikram\2026Projectt\index.html
-new file mode 100644
---- /dev/null
+--- a/c:\Users\vikram\2026Projectt\index.html
 +++ b/c:\Users\vikram\2026Projectt\index.html
-@@ -0,0 +1,463 @@
-+<!DOCTYPE html>
-+<html lang="en">
-+  <head>
-+    <meta charset="UTF-8" />
-+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-+    <title>Vikram Kamble | Senior Software Test Engineer</title>
-+    <meta
-+      name="description"
-+      content="Vikram Kamble - Senior Software Test Engineer with 5+ years of experience in manual and automation testing across web and mobile platforms."
-+    />
-+    <link rel="icon" href="favicon.ico" />
-+    <link rel="preconnect" href="https://fonts.googleapis.com" />
-+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-+    <link
-+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-+      rel="stylesheet"
-+    />
+@@ -17,3 +17,308 @@
+     />
+-    <link rel="stylesheet" href="style.css" />
 +    <style>
-+      :root {
-+        --bg: #f4f7f6;
-+        --ink: #0d2f2b;
-+        --muted: #4d6d68;
-+        --brand: #0b8c77;
-+        --brand-2: #34c6aa;
-+        --card: #ffffff;
-+        --accent: #0f4c81;
-+        --line: #d8e6e3;
-+        --shadow: 0 16px 35px rgba(8, 53, 46, 0.12);
-+      }
-+
 +      * {
 +        box-sizing: border-box;
++      }
++
++      :root {
++        --ink: #143b37;
++        --muted: #4a6c67;
++        --bg1: #f4fffb;
++        --bg2: #edf6ff;
++        --brand: #0d9a81;
++        --brand-2: #37d3b7;
++        --card: #ffffff;
++        --line: #d3e8e3;
++        --shadow: 0 16px 34px rgba(9, 64, 55, 0.14);
 +      }
 +
 +      html {
@@ -42,245 +26,240 @@ new file mode 100644
 +      }
 +
 +      body {
-+        margin: 0;
-+        font-family: "Outfit", sans-serif;
 +        color: var(--ink);
-+        background:
-+          radial-gradient(circle at 15% 10%, #d0f3eb 0%, transparent 35%),
-+          radial-gradient(circle at 85% 15%, #dff4ff 0%, transparent 35%),
-+          linear-gradient(160deg, #f7fbfa 0%, #eef6f4 100%);
-+        line-height: 1.65;
-+        overflow-x: hidden;
-+      }
-+
-+      .page-wrap {
-+        width: min(1140px, 92vw);
-+        margin: 0 auto;
-+      }
-+
-+      .hero {
-+        position: relative;
-+        padding: 80px 0 40px;
++        margin: 0;
 +        text-align: center;
-+      }
-+
-+      .floating-orb {
-+        position: absolute;
-+        border-radius: 50%;
-+        filter: blur(2px);
-+        opacity: 0.4;
-+        animation: drift 10s ease-in-out infinite;
-+      }
-+
-+      .orb-1 {
-+        width: 90px;
-+        height: 90px;
-+        background: #6de0c8;
-+        left: 2%;
-+        top: 60px;
-+      }
-+
-+      .orb-2 {
-+        width: 60px;
-+        height: 60px;
-+        background: #84c9ff;
-+        right: 6%;
-+        top: 110px;
-+        animation-delay: 1s;
-+      }
-+
-+      .badge {
-+        display: inline-block;
-+        padding: 8px 14px;
-+        border-radius: 999px;
-+        font-size: 0.9rem;
-+        font-weight: 600;
-+        color: #075244;
-+        background: #d5f7ef;
-+        border: 1px solid #b5ebdf;
-+        animation: popIn 0.8s ease forwards;
++        font-family: "Manrope", sans-serif;
++        background:
++          radial-gradient(circle at 12% 10%, #d3f6ed 0%, transparent 32%),
++          radial-gradient(circle at 88% 12%, #d9edff 0%, transparent 36%),
++          linear-gradient(145deg, var(--bg1), var(--bg2));
 +      }
 +
 +      h1 {
-+        margin: 14px 0 10px;
++        color: #083b34;
++        font-size: clamp(2.2rem, 7vw, 4.6rem);
++        margin: 20px auto 6px;
 +        font-family: "Playfair Display", serif;
-+        font-size: clamp(2.2rem, 6vw, 4.5rem);
-+        line-height: 1.12;
-+        letter-spacing: -0.02em;
-+        animation: riseIn 0.9s ease forwards;
++        letter-spacing: -0.03em;
++        text-shadow: 0 6px 18px rgba(20, 59, 55, 0.15);
++        animation: riseIn 0.85s ease both;
 +      }
 +
-+      .hero p {
-+        max-width: 780px;
-+        margin: 0 auto;
++      h2 {
++        color: #0f6e60;
++        font-family: "Playfair Display", serif;
++        font-size: clamp(1.4rem, 4vw, 2.2rem);
++        padding-bottom: 10px;
++        font-weight: 700;
++        margin-bottom: 8px;
++      }
++
++      h3 {
++        color: #0e4f71;
++        font-family: "Manrope", sans-serif;
++        font-weight: 800;
++        font-size: 1.2rem;
++        margin-bottom: 8px;
++      }
++
++      .top-container {
++        position: relative;
++        overflow: hidden;
++        padding: 36px 18px 0;
++        background: linear-gradient(130deg, #ccf5ed 0%, #d9f7ff 55%, #f8fffd 100%);
++        border-bottom: 1px solid #cce7e0;
++      }
++
++      .hero-sub {
++        margin: 0 auto 18px;
++        max-width: 760px;
++        font-size: clamp(1rem, 2.4vw, 1.2rem);
 +        color: var(--muted);
-+        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
-+        animation: riseIn 1s ease forwards;
++        font-weight: 600;
++        animation: riseIn 1s ease both;
 +      }
 +
-+      .cta-row {
-+        margin-top: 30px;
-+        display: flex;
-+        justify-content: center;
-+        flex-wrap: wrap;
-+        gap: 12px;
-+        animation: riseIn 1.1s ease forwards;
++      .imch {
++        border-radius: 999px;
++        width: 190px;
++        height: 190px;
++        object-fit: cover;
++        border: 5px solid #bdece2;
++        box-shadow: 0 10px 24px rgba(14, 91, 78, 0.18);
++        transition: transform 0.3s ease;
++      }
++
++      .imch:hover {
++        transform: scale(1.03);
++      }
++
++      .maountain {
++        height: auto;
++        width: min(620px, 88vw);
++        animation: float 6s ease-in-out infinite;
++      }
++
++      p {
++        line-height: 1.8;
++      }
++
++      hr {
++        border: 0;
++        border-top: 2px solid #cbe4df;
++        width: min(880px, 90%);
++        margin: 56px auto;
++      }
++
++      .intro2 {
++        width: min(640px, 90%);
++        margin: 10px auto 30px;
++        color: var(--muted);
++      }
++
++      .skill-row {
++        width: min(900px, 92%);
++        margin: 28px auto;
++        text-align: left;
++        background: var(--card);
++        border: 1px solid var(--line);
++        border-radius: 16px;
++        padding: 20px;
++        box-shadow: var(--shadow);
++        transition: transform 0.28s ease, box-shadow 0.28s ease;
++      }
++
++      .skill-row:hover {
++        transform: translateY(-3px);
++        box-shadow: 0 18px 36px rgba(9, 64, 55, 0.18);
++      }
++
++      .img1 {
++        width: 95px;
++        float: left;
++        margin: 0 18px 10px 0;
++      }
++
++      .img2 {
++        width: 95px;
++        float: right;
++        margin: 0 0 10px 18px;
++      }
++
++      .intro {
++        margin: 12px auto 0;
++        width: min(900px, 94%);
++        text-align: center;
++        line-height: 1.9em;
++        color: var(--muted);
++      }
++
++      .middle-container {
++        margin: 70px 0;
++      }
++
++      .profile,
++      .skills,
++      .contact-me,
++      .stats {
++        width: min(1020px, 94%);
++        margin: 0 auto;
++      }
++
++      .stats {
++        display: grid;
++        grid-template-columns: repeat(3, minmax(0, 1fr));
++        gap: 14px;
++        margin-top: 26px;
++      }
++
++      .stat {
++        background: var(--card);
++        border: 1px solid var(--line);
++        border-radius: 14px;
++        padding: 14px;
++        box-shadow: var(--shadow);
++      }
++
++      .stat h3 {
++        margin: 0;
++        color: var(--brand);
++      }
++
++      .stat p {
++        margin: 4px 0 0;
++        font-size: 0.95rem;
++        color: var(--muted);
++      }
++
++      a {
++        color: #0a6171;
++        margin: 10px 20px;
++        text-decoration: none;
++        transition: color 0.25s ease, transform 0.25s ease;
++      }
++
++      a:hover {
++        color: #eaf6f6;
++      }
++
++      .copyr {
++        color: #eaf6f6;
++        font-size: 0.84rem;
++        padding: 20px 0 8px;
++      }
++
++      .bottom-container {
++        background: linear-gradient(120deg, #0f8f79, #3bc7ab);
++        padding: 36px 0 18px;
++      }
++
++      .top-cloud {
++        position: absolute;
++        right: 3%;
++        top: 8px;
++        width: min(260px, 32vw);
++        animation: float 5.5s ease-in-out infinite;
++      }
++
++      .bottom-cloud {
++        position: absolute;
++        left: 4%;
++        top: 140px;
++        width: min(240px, 30vw);
++        animation: float 6.2s ease-in-out infinite;
 +      }
 +
 +      .btn {
 +        display: inline-block;
-+        padding: 13px 22px;
-+        border-radius: 999px;
-+        text-decoration: none;
-+        font-weight: 700;
-+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-+      }
-+
-+      .btn-primary {
-+        color: #ffffff;
++        border: 1px solid #89f2de;
 +        background: linear-gradient(120deg, var(--brand), var(--brand-2));
-+        box-shadow: 0 10px 24px rgba(11, 140, 119, 0.35);
-+      }
-+
-+      .btn-primary:hover {
-+        transform: translateY(-2px) scale(1.01);
-+        box-shadow: 0 14px 28px rgba(11, 140, 119, 0.42);
-+      }
-+
-+      .btn-secondary {
-+        color: var(--accent);
-+        border: 1px solid #b9d3e9;
-+        background: #ffffff;
-+      }
-+
-+      .btn-secondary:hover {
-+        transform: translateY(-2px);
-+      }
-+
-+      .grid {
-+        display: grid;
-+        gap: 20px;
-+      }
-+
-+      .section {
-+        background: var(--card);
-+        border: 1px solid var(--line);
-+        border-radius: 18px;
-+        box-shadow: var(--shadow);
-+        padding: 28px;
-+      }
-+
-+      .profile-grid {
-+        grid-template-columns: 190px 1fr;
-+        align-items: center;
-+      }
-+
-+      .avatar {
-+        width: 170px;
-+        height: 170px;
-+        border-radius: 50%;
-+        object-fit: cover;
-+        border: 5px solid #c7efe5;
-+        box-shadow: 0 10px 24px rgba(20, 96, 84, 0.2);
-+      }
-+
-+      h2 {
-+        margin: 0 0 10px;
-+        font-family: "Playfair Display", serif;
-+        font-size: clamp(1.45rem, 3vw, 2.1rem);
-+      }
-+
-+      .lead {
-+        margin: 0;
-+        color: var(--muted);
-+      }
-+
-+      .pill-list {
-+        margin: 16px 0 0;
-+        padding: 0;
-+        list-style: none;
-+        display: flex;
-+        flex-wrap: wrap;
-+        gap: 10px;
-+      }
-+
-+      .pill-list li {
-+        font-size: 0.92rem;
-+        color: #1b5f53;
-+        background: #effaf7;
-+        border: 1px solid #d5f0e9;
-+        padding: 8px 12px;
++        padding: 11px 18px;
 +        border-radius: 999px;
-+      }
-+
-+      .two-col {
-+        grid-template-columns: repeat(2, minmax(0, 1fr));
-+      }
-+
-+      .feature-list {
-+        margin: 8px 0 0;
-+        padding-left: 18px;
-+      }
-+
-+      .feature-list li + li {
-+        margin-top: 8px;
-+      }
-+
-+      .kpi-row {
-+        margin-top: 18px;
-+        display: grid;
-+        grid-template-columns: repeat(3, minmax(0, 1fr));
-+        gap: 12px;
-+      }
-+
-+      .kpi {
-+        text-align: center;
-+        border: 1px solid #d5ebe7;
-+        border-radius: 14px;
-+        padding: 14px;
-+        background: #f7fcfb;
-+      }
-+
-+      .kpi strong {
-+        display: block;
-+        font-size: 1.5rem;
-+        color: var(--brand);
-+      }
-+
-+      .timeline {
-+        margin: 0;
-+        padding-left: 18px;
-+      }
-+
-+      .timeline li + li {
-+        margin-top: 8px;
-+      }
-+
-+      .contact-box {
-+        text-align: center;
-+      }
-+
-+      .footer {
-+        margin: 30px 0 46px;
-+        text-align: center;
-+        color: var(--muted);
-+      }
-+
-+      .footer a {
-+        color: var(--brand);
-+        text-decoration: none;
++        box-shadow: 0 8px 20px rgba(13, 154, 129, 0.28);
++        color: white;
++        font-size: 16px;
++        font-family: "Manrope", sans-serif;
 +        font-weight: 700;
-+        margin: 0 8px;
++        text-decoration: none;
++        transition: transform 0.25s ease, box-shadow 0.25s ease;
 +      }
 +
-+      .footer a:hover {
-+        text-decoration: underline;
++      .btn:hover {
++        background: linear-gradient(120deg, #0a7f6b, #29b999);
++        color: #f2fffc;
++        transform: translateY(-2px);
++        box-shadow: 0 10px 26px rgba(12, 111, 94, 0.3);
++      }
++
++      .btn:active {
++        transform: translateY(0);
 +      }
 +
 +      .reveal {
 +        opacity: 0;
-+        transform: translateY(22px);
-+        transition: opacity 0.75s ease, transform 0.75s ease;
++        transform: translateY(20px);
++        transition: opacity 0.7s ease, transform 0.7s ease;
 +      }
 +
 +      .reveal.visible {
@@ -291,7 +270,7 @@ new file mode 100644
 +      @keyframes riseIn {
 +        from {
 +          opacity: 0;
-+          transform: translateY(20px);
++          transform: translateY(22px);
 +        }
 +        to {
 +          opacity: 1;
@@ -299,170 +278,36 @@ new file mode 100644
 +        }
 +      }
 +
-+      @keyframes popIn {
-+        from {
-+          opacity: 0;
-+          transform: scale(0.9);
-+        }
-+        to {
-+          opacity: 1;
-+          transform: scale(1);
-+        }
-+      }
-+
-+      @keyframes drift {
++      @keyframes float {
 +        0%,
 +        100% {
-+          transform: translateY(0px);
++          transform: translateY(0);
 +        }
 +        50% {
-+          transform: translateY(-12px);
++          transform: translateY(-10px);
 +        }
 +      }
 +
-+      @media (max-width: 860px) {
-+        .profile-grid {
-+          grid-template-columns: 1fr;
++      @media (max-width: 900px) {
++        .skill-row {
 +          text-align: center;
 +        }
 +
-+        .avatar {
-+          margin: 0 auto;
++        .img1,
++        .img2 {
++          float: none;
++          display: block;
++          margin: 0 auto 10px;
 +        }
 +
-+        .two-col {
-+          grid-template-columns: 1fr;
++        .top-cloud,
++        .bottom-cloud {
++          opacity: 0.45;
 +        }
 +
-+        .kpi-row {
++        .stats {
 +          grid-template-columns: 1fr;
 +        }
 +      }
 +    </style>
-+  </head>
-+  <body>
-+    <main class="page-wrap">
-+      <section class="hero">
-+        <div class="floating-orb orb-1" aria-hidden="true"></div>
-+        <div class="floating-orb orb-2" aria-hidden="true"></div>
-+        <span class="badge">Quality Engineering Excellence</span>
-+        <h1>Vikram Kamble</h1>
-+        <p>
-+          Senior Software Test Engineer with <strong>5+ years of experience</strong>
-+          in Manual and Automation Testing, delivering reliable web and mobile
-+          products through robust quality strategies.
-+        </p>
-+        <div class="cta-row">
-+          <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Contact Me</a>
-+          <a class="btn btn-secondary" href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Visit Portfolio</a>
-+        </div>
-+      </section>
-+
-+      <section class="section grid profile-grid reveal">
-+        <img class="avatar" src="color.png" alt="Vikram Kamble profile photo" />
-+        <div>
-+          <h2>Professional Summary</h2>
-+          <p class="lead">
-+            QA professional with proven success in designing scalable automation
-+            frameworks and leading high-impact manual test cycles across Agile teams.
-+            Strong command over Selenium, Cypress, BDD Cucumber frameworks,
-+            API testing, CI/CD execution, and risk-based test planning.
-+          </p>
-+          <ul class="pill-list">
-+            <li>Manual Testing</li>
-+            <li>Automation Testing</li>
-+            <li>Selenium + Java</li>
-+            <li>Cypress + JavaScript</li>
-+            <li>TestNG</li>
-+            <li>Cucumber BDD</li>
-+            <li>Postman API Testing</li>
-+            <li>Jenkins</li>
-+            <li>GitHub Actions</li>
-+            <li>JIRA</li>
-+            <li>TestRail</li>
-+            <li>SQL</li>
-+            <li>AWS Basics</li>
-+          </ul>
-+        </div>
-+      </section>
-+
-+      <section class="section reveal">
-+        <h2>Core Responsibilities</h2>
-+        <ul class="feature-list">
-+          <li>Analyze business requirements and convert them into measurable test coverage.</li>
-+          <li>Develop and maintain BDD + POM-based automation frameworks from scratch.</li>
-+          <li>Execute system, integration, regression, UAT, GUI, and non-functional testing.</li>
-+          <li>Build CI pipelines for reliable execution via Jenkins and GitHub Actions.</li>
-+          <li>Collaborate with product and engineering teams to reduce release risk and defect leakage.</li>
-+        </ul>
-+        <div class="kpi-row">
-+          <div class="kpi">
-+            <strong>5+</strong>
-+            <span>Years in QA</span>
-+          </div>
-+          <div class="kpi">
-+            <strong>End-to-End</strong>
-+            <span>Test Ownership</span>
-+          </div>
-+          <div class="kpi">
-+            <strong>Quality-First</strong>
-+            <span>Delivery Mindset</span>
-+          </div>
-+        </div>
-+      </section>
-+
-+      <section class="grid two-col reveal">
-+        <article class="section">
-+          <h2>Testing Expertise</h2>
-+          <ul class="timeline">
-+            <li>Smoke, Functional, Integration, System, Regression, and Ad-hoc testing.</li>
-+            <li>REST API validation, response verification, and workflow testing.</li>
-+            <li>Strong SDLC/STLC understanding with Agile/Scrum collaboration.</li>
-+            <li>Defect lifecycle management and quality reporting with JIRA/TestRail.</li>
-+          </ul>
-+        </article>
-+        <article class="section">
-+          <h2>Career Objective</h2>
-+          <p class="lead">
-+            To contribute as a high-impact Software Test Engineer by combining
-+            deep testing knowledge, automation excellence, and engineering
-+            discipline to deliver world-class software quality.
-+          </p>
-+        </article>
-+      </section>
-+
-+      <section class="section contact-box reveal">
-+        <h2>Let’s Build Quality at Scale</h2>
-+        <p class="lead">
-+          Open to challenging QA roles where quality, speed, and reliability are core.
-+        </p>
-+        <div class="cta-row">
-+          <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Hire Me</a>
-+        </div>
-+      </section>
-+
-+      <footer class="footer">
-+        <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
-+        <a href="#" aria-label="Facebook profile">Facebook</a>
-+        <a href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Website</a>
-+        <p>&copy; 2026 Vikram Kamble</p>
-+      </footer>
-+    </main>
-+
-+    <script>
-+      const observer = new IntersectionObserver(
-+        (entries) => {
-+          entries.forEach((entry) => {
-+            if (entry.isIntersecting) {
-+              entry.target.classList.add("visible");
-+              observer.unobserve(entry.target);
-+            }
-+          });
-+        },
-+        { threshold: 0.2 }
-+      );
-+
-+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-+    </script>
-+  </body>
-+</html>
+   </head>
