@@ -1,317 +1,468 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vikram Kamble | Software Test Engineer</title>
-    <meta
-      name="description"
-      content="Portfolio of Vikram Kamble - Software Test Engineer specializing in manual testing, automation, API validation, and quality engineering."
-    />
-    <link rel="icon" href="favicon.ico" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      :root {
-        --bg: #f8fbfa;
-        --ink: #0f2a25;
-        --muted: #4a6762;
-        --brand: #0b8f78;
-        --brand-2: #17c1a3;
-        --card: #ffffff;
-        --ring: rgba(11, 143, 120, 0.2);
-        --radius: 18px;
-        --shadow: 0 12px 35px rgba(10, 58, 50, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Manrope", sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 15% 10%, #d3f6ea 0%, transparent 35%),
-          radial-gradient(circle at 90% 20%, #dafcf3 0%, transparent 30%),
-          var(--bg);
-        line-height: 1.65;
-      }
-
-      .wrap {
-        width: min(1120px, 92vw);
-        margin: 0 auto;
-      }
-
-      .hero {
-        padding: 72px 0 40px;
-        text-align: center;
-      }
-
-      .hero h1 {
-        margin: 0 0 10px;
-        font-family: "Fraunces", serif;
-        font-size: clamp(2.2rem, 6vw, 4.2rem);
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-      }
-
-      .hero p {
-        margin: 0 auto;
-        max-width: 760px;
-        font-size: clamp(1rem, 2.5vw, 1.2rem);
-        color: var(--muted);
-      }
-
-      .cta-row {
-        margin-top: 28px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 12px 20px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: 0.25s ease;
-      }
-
-      .btn-primary {
-        color: #fff;
-        background: linear-gradient(120deg, var(--brand), var(--brand-2));
-        box-shadow: 0 8px 22px rgba(11, 143, 120, 0.3);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-      }
-
-      .btn-ghost {
-        color: var(--brand);
-        border: 1px solid var(--brand);
-        background: #fff;
-      }
-
-      .grid {
-        display: grid;
-        gap: 18px;
-      }
-
-      .profile {
-        margin-top: 28px;
-        grid-template-columns: 180px 1fr;
-        align-items: center;
-        background: var(--card);
-        border: 1px solid #e5f0ed;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 24px;
-      }
-
-      .avatar {
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        border: 4px solid #c8efe6;
-        object-fit: cover;
-      }
-
-      .section {
-        margin-top: 22px;
-        background: var(--card);
-        border: 1px solid #e5f0ed;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-        padding: 28px;
-      }
-
-      h2 {
-        margin: 0 0 12px;
-        font-family: "Fraunces", serif;
-        font-size: clamp(1.4rem, 3vw, 2rem);
-      }
-
-      .pill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 12px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .pill-list li {
-        background: #effaf7;
-        border: 1px solid #d8f1ea;
-        color: #185248;
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 0.94rem;
-      }
-
-      .highlights {
-        margin: 0;
-        padding-left: 20px;
-      }
-
-      .highlights li + li {
-        margin-top: 8px;
-      }
-
-      .two-col {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer {
-        margin: 32px 0 48px;
-        text-align: center;
-        color: var(--muted);
-      }
-
-      .socials {
-        margin-bottom: 8px;
-      }
-
-      .socials a {
-        color: var(--brand);
-        font-weight: 700;
-        text-decoration: none;
-        margin: 0 10px;
-      }
-
-      .socials a:hover {
-        text-decoration: underline;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: in 0.8s ease forwards;
-      }
-
-      .reveal:nth-child(2) { animation-delay: 0.1s; }
-      .reveal:nth-child(3) { animation-delay: 0.2s; }
-      .reveal:nth-child(4) { animation-delay: 0.3s; }
-
-      @keyframes in {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @media (max-width: 820px) {
-        .profile {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
-
-        .avatar {
-          margin: 0 auto;
-        }
-
-        .two-col {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main class="wrap">
-      <section class="hero reveal">
-        <h1>Vikram Kamble</h1>
-        <p>Software Test Engineer focused on reliable automation, thoughtful manual testing, and shipping quality at speed.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Contact Me</a>
-          <a class="btn btn-ghost" href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Visit Website</a>
-        </div>
-      </section>
-
-      <section class="profile grid reveal">
-        <img class="avatar" src="color.png" alt="Portrait of Vikram Kamble" />
-        <div>
-          <h2>About</h2>
-          <p>
-            3 years of experience in manual and automation testing across CloudOps Hyper-Automation and Personal Digital Storage (web and mobile).
-            Strong in BDD framework design from scratch using POM, TestNG, Cucumber, Java, and Gherkin.
-          </p>
-          <ul class="pill-list">
-            <li>Selenium</li>
-            <li>Cypress</li>
-            <li>TestNG</li>
-            <li>Cucumber</li>
-            <li>Jenkins</li>
-            <li>GitHub Actions</li>
-            <li>Postman API Testing</li>
-            <li>JIRA</li>
-            <li>TestRail</li>
-            <li>SQL</li>
-            <li>AWS (Basic)</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section reveal">
-        <h2>Roles and Responsibilities</h2>
-        <ul class="highlights">
-          <li>Review requirements and user stories to define high-value test coverage.</li>
-          <li>Execute system, integration, regression, UAT, smoke, and ad-hoc test cycles.</li>
-          <li>Design and maintain scalable automation suites using robust page objects.</li>
-          <li>Track defects in JIRA, collaborate with developers, and drive quick resolution.</li>
-          <li>Report quality metrics and provide clear release-readiness recommendations.</li>
-        </ul>
-      </section>
-
-      <section class="section grid two-col reveal">
-        <article>
-          <h2>Core Strengths</h2>
-          <ul class="highlights">
-            <li>Manual + Automation Testing</li>
-            <li>SDLC / STLC / Agile / Scrum</li>
-            <li>GUI + Usability + Non-Functional Testing</li>
-            <li>Functional / Integration / System / Regression</li>
-          </ul>
-        </article>
-        <article>
-          <h2>Objective</h2>
-          <p>
-            To contribute as a Software Test Engineer by combining technical depth, analytical thinking, and quality-first execution
-            to deliver stable, high-performance software products.
-          </p>
-        </article>
-      </section>
-
-      <footer class="footer reveal">
-        <div class="socials">
-          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
-          <a href="#" aria-label="Facebook profile">Facebook</a>
-          <a href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Website</a>
-        </div>
-        <small>© 2026 Vikram Kamble</small>
-      </footer>
-    </main>
-  </body>
-</html>
+diff --git a/c:\Users\vikram\2026Projectt\index.html b/c:\Users\vikram\2026Projectt\index.html
+new file mode 100644
+--- /dev/null
++++ b/c:\Users\vikram\2026Projectt\index.html
+@@ -0,0 +1,463 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>Vikram Kamble | Senior Software Test Engineer</title>
++    <meta
++      name="description"
++      content="Vikram Kamble - Senior Software Test Engineer with 5+ years of experience in manual and automation testing across web and mobile platforms."
++    />
++    <link rel="icon" href="favicon.ico" />
++    <link rel="preconnect" href="https://fonts.googleapis.com" />
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
++    <link
++      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
++      rel="stylesheet"
++    />
++    <style>
++      :root {
++        --bg: #f4f7f6;
++        --ink: #0d2f2b;
++        --muted: #4d6d68;
++        --brand: #0b8c77;
++        --brand-2: #34c6aa;
++        --card: #ffffff;
++        --accent: #0f4c81;
++        --line: #d8e6e3;
++        --shadow: 0 16px 35px rgba(8, 53, 46, 0.12);
++      }
++
++      * {
++        box-sizing: border-box;
++      }
++
++      html {
++        scroll-behavior: smooth;
++      }
++
++      body {
++        margin: 0;
++        font-family: "Outfit", sans-serif;
++        color: var(--ink);
++        background:
++          radial-gradient(circle at 15% 10%, #d0f3eb 0%, transparent 35%),
++          radial-gradient(circle at 85% 15%, #dff4ff 0%, transparent 35%),
++          linear-gradient(160deg, #f7fbfa 0%, #eef6f4 100%);
++        line-height: 1.65;
++        overflow-x: hidden;
++      }
++
++      .page-wrap {
++        width: min(1140px, 92vw);
++        margin: 0 auto;
++      }
++
++      .hero {
++        position: relative;
++        padding: 80px 0 40px;
++        text-align: center;
++      }
++
++      .floating-orb {
++        position: absolute;
++        border-radius: 50%;
++        filter: blur(2px);
++        opacity: 0.4;
++        animation: drift 10s ease-in-out infinite;
++      }
++
++      .orb-1 {
++        width: 90px;
++        height: 90px;
++        background: #6de0c8;
++        left: 2%;
++        top: 60px;
++      }
++
++      .orb-2 {
++        width: 60px;
++        height: 60px;
++        background: #84c9ff;
++        right: 6%;
++        top: 110px;
++        animation-delay: 1s;
++      }
++
++      .badge {
++        display: inline-block;
++        padding: 8px 14px;
++        border-radius: 999px;
++        font-size: 0.9rem;
++        font-weight: 600;
++        color: #075244;
++        background: #d5f7ef;
++        border: 1px solid #b5ebdf;
++        animation: popIn 0.8s ease forwards;
++      }
++
++      h1 {
++        margin: 14px 0 10px;
++        font-family: "Playfair Display", serif;
++        font-size: clamp(2.2rem, 6vw, 4.5rem);
++        line-height: 1.12;
++        letter-spacing: -0.02em;
++        animation: riseIn 0.9s ease forwards;
++      }
++
++      .hero p {
++        max-width: 780px;
++        margin: 0 auto;
++        color: var(--muted);
++        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
++        animation: riseIn 1s ease forwards;
++      }
++
++      .cta-row {
++        margin-top: 30px;
++        display: flex;
++        justify-content: center;
++        flex-wrap: wrap;
++        gap: 12px;
++        animation: riseIn 1.1s ease forwards;
++      }
++
++      .btn {
++        display: inline-block;
++        padding: 13px 22px;
++        border-radius: 999px;
++        text-decoration: none;
++        font-weight: 700;
++        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
++      }
++
++      .btn-primary {
++        color: #ffffff;
++        background: linear-gradient(120deg, var(--brand), var(--brand-2));
++        box-shadow: 0 10px 24px rgba(11, 140, 119, 0.35);
++      }
++
++      .btn-primary:hover {
++        transform: translateY(-2px) scale(1.01);
++        box-shadow: 0 14px 28px rgba(11, 140, 119, 0.42);
++      }
++
++      .btn-secondary {
++        color: var(--accent);
++        border: 1px solid #b9d3e9;
++        background: #ffffff;
++      }
++
++      .btn-secondary:hover {
++        transform: translateY(-2px);
++      }
++
++      .grid {
++        display: grid;
++        gap: 20px;
++      }
++
++      .section {
++        background: var(--card);
++        border: 1px solid var(--line);
++        border-radius: 18px;
++        box-shadow: var(--shadow);
++        padding: 28px;
++      }
++
++      .profile-grid {
++        grid-template-columns: 190px 1fr;
++        align-items: center;
++      }
++
++      .avatar {
++        width: 170px;
++        height: 170px;
++        border-radius: 50%;
++        object-fit: cover;
++        border: 5px solid #c7efe5;
++        box-shadow: 0 10px 24px rgba(20, 96, 84, 0.2);
++      }
++
++      h2 {
++        margin: 0 0 10px;
++        font-family: "Playfair Display", serif;
++        font-size: clamp(1.45rem, 3vw, 2.1rem);
++      }
++
++      .lead {
++        margin: 0;
++        color: var(--muted);
++      }
++
++      .pill-list {
++        margin: 16px 0 0;
++        padding: 0;
++        list-style: none;
++        display: flex;
++        flex-wrap: wrap;
++        gap: 10px;
++      }
++
++      .pill-list li {
++        font-size: 0.92rem;
++        color: #1b5f53;
++        background: #effaf7;
++        border: 1px solid #d5f0e9;
++        padding: 8px 12px;
++        border-radius: 999px;
++      }
++
++      .two-col {
++        grid-template-columns: repeat(2, minmax(0, 1fr));
++      }
++
++      .feature-list {
++        margin: 8px 0 0;
++        padding-left: 18px;
++      }
++
++      .feature-list li + li {
++        margin-top: 8px;
++      }
++
++      .kpi-row {
++        margin-top: 18px;
++        display: grid;
++        grid-template-columns: repeat(3, minmax(0, 1fr));
++        gap: 12px;
++      }
++
++      .kpi {
++        text-align: center;
++        border: 1px solid #d5ebe7;
++        border-radius: 14px;
++        padding: 14px;
++        background: #f7fcfb;
++      }
++
++      .kpi strong {
++        display: block;
++        font-size: 1.5rem;
++        color: var(--brand);
++      }
++
++      .timeline {
++        margin: 0;
++        padding-left: 18px;
++      }
++
++      .timeline li + li {
++        margin-top: 8px;
++      }
++
++      .contact-box {
++        text-align: center;
++      }
++
++      .footer {
++        margin: 30px 0 46px;
++        text-align: center;
++        color: var(--muted);
++      }
++
++      .footer a {
++        color: var(--brand);
++        text-decoration: none;
++        font-weight: 700;
++        margin: 0 8px;
++      }
++
++      .footer a:hover {
++        text-decoration: underline;
++      }
++
++      .reveal {
++        opacity: 0;
++        transform: translateY(22px);
++        transition: opacity 0.75s ease, transform 0.75s ease;
++      }
++
++      .reveal.visible {
++        opacity: 1;
++        transform: translateY(0);
++      }
++
++      @keyframes riseIn {
++        from {
++          opacity: 0;
++          transform: translateY(20px);
++        }
++        to {
++          opacity: 1;
++          transform: translateY(0);
++        }
++      }
++
++      @keyframes popIn {
++        from {
++          opacity: 0;
++          transform: scale(0.9);
++        }
++        to {
++          opacity: 1;
++          transform: scale(1);
++        }
++      }
++
++      @keyframes drift {
++        0%,
++        100% {
++          transform: translateY(0px);
++        }
++        50% {
++          transform: translateY(-12px);
++        }
++      }
++
++      @media (max-width: 860px) {
++        .profile-grid {
++          grid-template-columns: 1fr;
++          text-align: center;
++        }
++
++        .avatar {
++          margin: 0 auto;
++        }
++
++        .two-col {
++          grid-template-columns: 1fr;
++        }
++
++        .kpi-row {
++          grid-template-columns: 1fr;
++        }
++      }
++    </style>
++  </head>
++  <body>
++    <main class="page-wrap">
++      <section class="hero">
++        <div class="floating-orb orb-1" aria-hidden="true"></div>
++        <div class="floating-orb orb-2" aria-hidden="true"></div>
++        <span class="badge">Quality Engineering Excellence</span>
++        <h1>Vikram Kamble</h1>
++        <p>
++          Senior Software Test Engineer with <strong>5+ years of experience</strong>
++          in Manual and Automation Testing, delivering reliable web and mobile
++          products through robust quality strategies.
++        </p>
++        <div class="cta-row">
++          <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Contact Me</a>
++          <a class="btn btn-secondary" href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Visit Portfolio</a>
++        </div>
++      </section>
++
++      <section class="section grid profile-grid reveal">
++        <img class="avatar" src="color.png" alt="Vikram Kamble profile photo" />
++        <div>
++          <h2>Professional Summary</h2>
++          <p class="lead">
++            QA professional with proven success in designing scalable automation
++            frameworks and leading high-impact manual test cycles across Agile teams.
++            Strong command over Selenium, Cypress, BDD Cucumber frameworks,
++            API testing, CI/CD execution, and risk-based test planning.
++          </p>
++          <ul class="pill-list">
++            <li>Manual Testing</li>
++            <li>Automation Testing</li>
++            <li>Selenium + Java</li>
++            <li>Cypress + JavaScript</li>
++            <li>TestNG</li>
++            <li>Cucumber BDD</li>
++            <li>Postman API Testing</li>
++            <li>Jenkins</li>
++            <li>GitHub Actions</li>
++            <li>JIRA</li>
++            <li>TestRail</li>
++            <li>SQL</li>
++            <li>AWS Basics</li>
++          </ul>
++        </div>
++      </section>
++
++      <section class="section reveal">
++        <h2>Core Responsibilities</h2>
++        <ul class="feature-list">
++          <li>Analyze business requirements and convert them into measurable test coverage.</li>
++          <li>Develop and maintain BDD + POM-based automation frameworks from scratch.</li>
++          <li>Execute system, integration, regression, UAT, GUI, and non-functional testing.</li>
++          <li>Build CI pipelines for reliable execution via Jenkins and GitHub Actions.</li>
++          <li>Collaborate with product and engineering teams to reduce release risk and defect leakage.</li>
++        </ul>
++        <div class="kpi-row">
++          <div class="kpi">
++            <strong>5+</strong>
++            <span>Years in QA</span>
++          </div>
++          <div class="kpi">
++            <strong>End-to-End</strong>
++            <span>Test Ownership</span>
++          </div>
++          <div class="kpi">
++            <strong>Quality-First</strong>
++            <span>Delivery Mindset</span>
++          </div>
++        </div>
++      </section>
++
++      <section class="grid two-col reveal">
++        <article class="section">
++          <h2>Testing Expertise</h2>
++          <ul class="timeline">
++            <li>Smoke, Functional, Integration, System, Regression, and Ad-hoc testing.</li>
++            <li>REST API validation, response verification, and workflow testing.</li>
++            <li>Strong SDLC/STLC understanding with Agile/Scrum collaboration.</li>
++            <li>Defect lifecycle management and quality reporting with JIRA/TestRail.</li>
++          </ul>
++        </article>
++        <article class="section">
++          <h2>Career Objective</h2>
++          <p class="lead">
++            To contribute as a high-impact Software Test Engineer by combining
++            deep testing knowledge, automation excellence, and engineering
++            discipline to deliver world-class software quality.
++          </p>
++        </article>
++      </section>
++
++      <section class="section contact-box reveal">
++        <h2>Let’s Build Quality at Scale</h2>
++        <p class="lead">
++          Open to challenging QA roles where quality, speed, and reliability are core.
++        </p>
++        <div class="cta-row">
++          <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Hire Me</a>
++        </div>
++      </section>
++
++      <footer class="footer">
++        <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
++        <a href="#" aria-label="Facebook profile">Facebook</a>
++        <a href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Website</a>
++        <p>&copy; 2026 Vikram Kamble</p>
++      </footer>
++    </main>
++
++    <script>
++      const observer = new IntersectionObserver(
++        (entries) => {
++          entries.forEach((entry) => {
++            if (entry.isIntersecting) {
++              entry.target.classList.add("visible");
++              observer.unobserve(entry.target);
++            }
++          });
++        },
++        { threshold: 0.2 }
++      );
++
++      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
++    </script>
++  </body>
++</html>
