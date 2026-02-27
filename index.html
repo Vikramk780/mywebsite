@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vikram Kamble | Senior Software Test Engineer</title>
+    <title>Vikram Kamble | Software Test Engineer</title>
     <meta
       name="description"
-      content="Portfolio of Vikram Kamble - Senior Software Test Engineer with 5+ years in manual and automation testing."
+      content="Portfolio of Vikram Kamble - Software Test Engineer with 5+ years of experience in manual and automation testing."
     />
     <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
@@ -18,12 +18,13 @@
 
     <style>
       :root {
-        --ink: #ebfffb;
-        --muted: #c4ddd7;
-        --brand: #2ce3c0;
-        --brand-2: #5fd0ff;
-        --glass: rgba(7, 23, 29, 0.48);
+        --ink: #ecfffb;
+        --muted: #bfded7;
+        --brand: #30e3c3;
+        --brand-2: #64ceff;
+        --glass: rgba(7, 23, 29, 0.5);
         --line: rgba(137, 230, 206, 0.28);
+        --ok: #9af6e3;
       }
 
       * { box-sizing: border-box; }
@@ -57,25 +58,9 @@
         animation: morph 16s ease-in-out infinite alternate;
       }
 
-      .aurora-bg span:nth-child(1) {
-        left: -10vmax;
-        top: -16vmax;
-        background: #18a88e;
-      }
-
-      .aurora-bg span:nth-child(2) {
-        right: -14vmax;
-        top: -20vmax;
-        background: #266dff;
-        animation-delay: 2s;
-      }
-
-      .aurora-bg span:nth-child(3) {
-        left: 20vmax;
-        bottom: -26vmax;
-        background: #1ecfcb;
-        animation-delay: 4s;
-      }
+      .aurora-bg span:nth-child(1) { left: -10vmax; top: -16vmax; background: #18a88e; }
+      .aurora-bg span:nth-child(2) { right: -14vmax; top: -20vmax; background: #266dff; animation-delay: 2s; }
+      .aurora-bg span:nth-child(3) { left: 20vmax; bottom: -26vmax; background: #1ecfcb; animation-delay: 4s; }
 
       .noise {
         position: fixed;
@@ -90,7 +75,7 @@
       .wrap {
         width: min(1120px, 92vw);
         margin: 0 auto;
-        padding: 38px 0 48px;
+        padding: 34px 0 48px;
       }
 
       .glass {
@@ -103,7 +88,7 @@
 
       .hero {
         text-align: center;
-        padding: 54px 28px;
+        padding: 52px 28px;
         animation: rise 0.9s ease both;
       }
 
@@ -116,7 +101,7 @@
       }
 
       .hero p {
-        max-width: 840px;
+        max-width: 850px;
         margin: 0 auto;
         color: var(--muted);
         font-size: clamp(1rem, 2.4vw, 1.2rem);
@@ -154,6 +139,7 @@
       .btn:hover { transform: translateY(-2px); }
 
       .grid { display: grid; gap: 18px; margin-top: 18px; }
+      .section { padding: 26px; }
 
       .profile {
         grid-template-columns: 180px 1fr;
@@ -168,8 +154,6 @@
         border: 3px solid rgba(132, 236, 214, 0.7);
         object-fit: cover;
       }
-
-      .section { padding: 26px; }
 
       h2 {
         margin: 0 0 12px;
@@ -195,15 +179,31 @@
         font-size: 0.93rem;
       }
 
-      .highlights {
-        margin: 0;
-        padding-left: 20px;
+      .highlights { margin: 0; padding-left: 20px; }
+      .highlights li + li { margin-top: 8px; }
+      .highlights strong { color: var(--ok); }
+
+      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .stats {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .highlights li + li { margin-top: 8px; }
+      .stat {
+        background: rgba(12, 39, 46, 0.56);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
+      }
 
-      .two-col {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .stat .num {
+        display: block;
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: var(--ok);
       }
 
       .footer {
@@ -220,9 +220,7 @@
         margin: 0 10px;
       }
 
-      .socials a:hover {
-        text-decoration: underline;
-      }
+      .socials a:hover { text-decoration: underline; }
 
       .reveal {
         opacity: 0;
@@ -233,29 +231,21 @@
       .reveal:nth-child(2) { animation-delay: 0.12s; }
       .reveal:nth-child(3) { animation-delay: 0.22s; }
       .reveal:nth-child(4) { animation-delay: 0.32s; }
+      .reveal:nth-child(5) { animation-delay: 0.42s; }
 
-      @keyframes in {
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      @keyframes rise {
-        from { opacity: 0; transform: translateY(16px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
+      @keyframes in { to { opacity: 1; transform: translateY(0); } }
+      @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
       @keyframes morph {
         0% { transform: translate(0, 0) scale(1) rotate(0deg); }
         50% { transform: translate(2vmax, -2vmax) scale(1.08) rotate(25deg); }
         100% { transform: translate(-2vmax, 2vmax) scale(0.95) rotate(-20deg); }
       }
 
-      @media (max-width: 840px) {
-        .profile {
-          grid-template-columns: 1fr;
-          text-align: center;
-        }
+      @media (max-width: 860px) {
+        .profile { grid-template-columns: 1fr; text-align: center; }
         .avatar { margin: 0 auto; }
         .two-col { grid-template-columns: 1fr; }
+        .stats { grid-template-columns: 1fr; }
       }
     </style>
   </head>
@@ -272,8 +262,8 @@
       <section class="hero glass reveal">
         <h1>Vikram Kamble</h1>
         <p>
-          Senior Software Test Engineer with <strong>5+ years</strong> of experience in manual and automation testing,
-          delivering high-confidence releases across web and mobile platforms.
+          Software Test Engineer with <strong>5+ years</strong> of experience in manual and automation testing,
+          delivering reliable, high-confidence releases across web and mobile platforms.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Contact Me</a>
@@ -284,10 +274,10 @@
       <section class="profile grid glass reveal">
         <img class="avatar" src="color.png" alt="Portrait of Vikram Kamble" />
         <div>
-          <h2>About</h2>
+          <h2>Professional Summary</h2>
           <p>
             5+ years in Manual and Automation Testing across CloudOps Hyper-Automation and Personal Digital Storage.
-            Strong in BDD framework design from scratch using POM, TestNG, Cucumber, Java, and Gherkin.
+            Strong in BDD framework development from scratch using POM, TestNG, Cucumber, Java, and Gherkin.
           </p>
           <ul class="pill-list">
             <li>Selenium</li>
@@ -307,32 +297,42 @@
       </section>
 
       <section class="section glass reveal">
+        <h2>Impact Highlights</h2>
+        <div class="stats">
+          <div class="stat"><span class="num">5+ Years</span>QA delivery experience</div>
+          <div class="stat"><span class="num">End-to-End</span>Manual + automation ownership</div>
+          <div class="stat"><span class="num">CI Driven</span>Stable execution in pipelines</div>
+        </div>
+      </section>
+
+      <section class="section glass reveal">
         <h2>Roles and Responsibilities</h2>
         <ul class="highlights">
-          <li>Review requirements and user stories to define high-value test coverage.</li>
-          <li>Execute system, integration, regression, UAT, smoke, and ad-hoc test cycles.</li>
-          <li>Design and maintain scalable automation suites using robust page objects.</li>
-          <li>Track defects in JIRA, collaborate with developers, and drive quick resolution.</li>
-          <li>Report quality metrics and provide clear release-readiness recommendations.</li>
+          <li><strong>Requirement Analysis:</strong> translate user stories into risk-based, traceable test coverage.</li>
+          <li><strong>Execution:</strong> system, integration, regression, UAT, smoke, ad-hoc, and API testing cycles.</li>
+          <li><strong>Automation:</strong> build and maintain scalable page-object based suites with BDD workflows.</li>
+          <li><strong>Defect Management:</strong> high-quality bug reporting in JIRA with clear RCA collaboration.</li>
+          <li><strong>Release Readiness:</strong> provide quality metrics and go/no-go recommendations.</li>
         </ul>
       </section>
 
       <section class="section grid two-col glass reveal">
         <article>
-          <h2>Core Strengths</h2>
+          <h2>Project Snapshot</h2>
           <ul class="highlights">
-            <li>Manual + Automation Testing</li>
-            <li>SDLC / STLC / Agile / Scrum</li>
-            <li>GUI + Usability + Non-Functional Testing</li>
-            <li>Functional / Integration / System / Regression</li>
+            <li><strong>Domain:</strong> CloudOps Hyper-Automation, Personal Digital Storage</li>
+            <li><strong>Platforms:</strong> Web and Mobile</li>
+            <li><strong>Coverage:</strong> UI + API + Regression + Non-functional validations</li>
+            <li><strong>Outcome:</strong> improved release confidence and lower defect leakage</li>
           </ul>
         </article>
         <article>
-          <h2>Objective</h2>
-          <p>
-            To contribute as a Software Test Engineer by combining technical depth, analytical thinking,
-            and quality-first execution to deliver stable, high-performance software products.
-          </p>
+          <h2>Training and Objective</h2>
+          <ul class="highlights">
+            <li><strong>Training:</strong> Manual and Automation Testing, QSpiders Institute, Bangalore</li>
+            <li><strong>Goal:</strong> deliver stable, scalable, and high-performance software through quality-first execution</li>
+            <li><strong>Approach:</strong> deep test design, reliable automation, and strong engineering collaboration</li>
+          </ul>
         </article>
       </section>
 
