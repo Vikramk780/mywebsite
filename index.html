@@ -6,295 +6,345 @@
     <title>Vikram Kamble | Software Test Engineer</title>
     <meta
       name="description"
-      content="Vikram Kamble - Software Test Engineer with 5+ years in manual and automation testing, API validation, and release quality engineering."
+      content="Portfolio of Vikram Kamble - Software Test Engineer with 5+ years of experience in manual and automation testing."
     />
     <link rel="icon" href="favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
+
     <style>
       :root {
-        --bg: #071219;
-        --bg-2: #0b1d27;
-        --ink: #ebfffb;
-        --muted: #b8d8d2;
-        --brand: #39e6c5;
-        --brand-2: #66cfff;
-        --line: rgba(145, 223, 206, 0.24);
-        --glass: rgba(8, 26, 33, 0.54);
-        --ok: #9ff7e6;
+        --ink: #ecfffb;
+        --muted: #bfded7;
+        --brand: #30e3c3;
+        --brand-2: #64ceff;
+        --glass: rgba(7, 23, 29, 0.5);
+        --line: rgba(137, 230, 206, 0.28);
+        --ok: #9af6e3;
       }
 
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
+
       body {
         margin: 0;
         font-family: "Manrope", sans-serif;
         color: var(--ink);
-        background: linear-gradient(160deg, var(--bg), var(--bg-2));
+        background: #071319;
+        line-height: 1.65;
         overflow-x: hidden;
       }
 
-      .aurora, .mesh {
+      .aurora-bg {
         position: fixed;
         inset: 0;
         z-index: -2;
-        pointer-events: none;
+        overflow: hidden;
+        background: linear-gradient(160deg, #061118, #0a1c24 45%, #0a1622);
       }
 
-      .aurora::before, .aurora::after {
-        content: "";
+      .aurora-bg span {
         position: absolute;
-        width: 54vmax;
-        height: 54vmax;
-        border-radius: 48%;
-        filter: blur(54px);
-        opacity: 0.28;
-        animation: drift 18s ease-in-out infinite alternate;
+        width: 56vmax;
+        height: 56vmax;
+        border-radius: 45% 55% 50% 50%;
+        filter: blur(48px);
+        opacity: 0.3;
+        mix-blend-mode: screen;
+        animation: morph 16s ease-in-out infinite alternate;
       }
 
-      .aurora::before { left: -12vmax; top: -18vmax; background: #15a78d; }
-      .aurora::after { right: -14vmax; bottom: -22vmax; background: #2f6aff; animation-delay: 3s; }
+      .aurora-bg span:nth-child(1) { left: -10vmax; top: -16vmax; background: #18a88e; }
+      .aurora-bg span:nth-child(2) { right: -14vmax; top: -20vmax; background: #266dff; animation-delay: 2s; }
+      .aurora-bg span:nth-child(3) { left: 20vmax; bottom: -26vmax; background: #1ecfcb; animation-delay: 4s; }
 
-      .mesh {
+      .noise {
+        position: fixed;
+        inset: 0;
         z-index: -1;
-        opacity: 0.14;
-        background-image:
-          linear-gradient(rgba(255,255,255,0.11) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255,255,255,0.11) 1px, transparent 1px);
-        background-size: 34px 34px;
-        mask-image: radial-gradient(circle at 50% 35%, black 25%, transparent 75%);
+        pointer-events: none;
+        opacity: 0.05;
+        background-image: radial-gradient(#fff 0.45px, transparent 0.45px);
+        background-size: 3px 3px;
       }
 
-      .wrap { width: min(1140px, 92vw); margin: 0 auto; padding: 28px 0 44px; }
+      .wrap {
+        width: min(1120px, 92vw);
+        margin: 0 auto;
+        padding: 34px 0 48px;
+      }
+
       .glass {
         background: var(--glass);
         border: 1px solid var(--line);
         border-radius: 20px;
-        backdrop-filter: blur(11px);
-        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
       }
 
-      .top {
-        display: flex; justify-content: space-between; align-items: center;
-        padding: 14px 18px; position: sticky; top: 10px; z-index: 10;
-      }
-
-      .brand { font-weight: 800; letter-spacing: 0.02em; }
-      .nav a { color: #cefff7; text-decoration: none; margin-left: 14px; font-weight: 700; font-size: 0.92rem; }
-
-      .hero { margin-top: 14px; padding: 54px 28px; text-align: center; }
-      .tag {
-        display: inline-block; padding: 7px 12px; border-radius: 999px;
-        background: rgba(57, 230, 197, 0.16); border: 1px solid rgba(116, 241, 215, 0.28);
-        color: var(--ok); font-weight: 700; font-size: 0.85rem;
+      .hero {
+        text-align: center;
+        padding: 52px 28px;
+        animation: rise 0.9s ease both;
       }
 
       h1 {
-        margin: 12px 0 10px;
+        margin: 0 0 10px;
         font-family: "Fraunces", serif;
-        font-size: clamp(2.3rem, 6vw, 4.4rem);
-        line-height: 1.07;
+        font-size: clamp(2.2rem, 6vw, 4.2rem);
+        line-height: 1.08;
         letter-spacing: -0.02em;
       }
 
       .hero p {
-        margin: 0 auto; max-width: 900px; color: var(--muted);
+        max-width: 850px;
+        margin: 0 auto;
+        color: var(--muted);
         font-size: clamp(1rem, 2.4vw, 1.2rem);
       }
 
-      .cta { margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+      .cta-row {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
       .btn {
-        text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 800;
-        transition: transform .2s ease, box-shadow .2s ease;
+        display: inline-block;
+        padding: 12px 20px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 800;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
       .btn-primary {
-        color: #012422;
+        color: #001b1b;
         background: linear-gradient(120deg, var(--brand), var(--brand-2));
-        box-shadow: 0 10px 24px rgba(57, 230, 197, 0.32);
+        box-shadow: 0 10px 24px rgba(44, 227, 192, 0.3);
       }
 
-      .btn-ghost { color: #defff9; border: 1px solid #88dcca; background: rgba(8, 33, 40, 0.55); }
+      .btn-ghost {
+        color: #dcfffa;
+        border: 1px solid #88dcca;
+        background: rgba(10, 35, 44, 0.46);
+      }
+
       .btn:hover { transform: translateY(-2px); }
 
       .grid { display: grid; gap: 18px; margin-top: 18px; }
       .section { padding: 26px; }
-      .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+      .profile {
+        grid-template-columns: 180px 1fr;
+        align-items: center;
+        padding: 24px;
+      }
+
+      .avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 3px solid rgba(132, 236, 214, 0.7);
+        object-fit: cover;
+      }
 
       h2 {
-        margin: 0 0 10px; font-family: "Fraunces", serif;
+        margin: 0 0 12px;
+        font-family: "Fraunces", serif;
         font-size: clamp(1.35rem, 3vw, 2rem);
       }
 
-      .profile { display: grid; grid-template-columns: 170px 1fr; align-items: center; gap: 20px; }
-      .avatar {
-        width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
-        border: 3px solid rgba(135, 236, 215, 0.7);
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
       }
 
-      .pill-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 12px 0 0; padding: 0; }
       .pill-list li {
-        background: rgba(29, 98, 89, 0.34); border: 1px solid rgba(118, 221, 198, 0.3);
-        color: #e1fffa; padding: 8px 12px; border-radius: 999px; font-size: .92rem;
+        background: rgba(28, 94, 86, 0.35);
+        border: 1px solid rgba(118, 221, 198, 0.3);
+        color: #e0fffa;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.93rem;
       }
 
-      .metric {
-        padding: 16px; border-radius: 14px; border: 1px solid var(--line);
-        background: rgba(12, 38, 46, .56);
+      .highlights { margin: 0; padding-left: 20px; }
+      .highlights li + li { margin-top: 8px; }
+      .highlights strong { color: var(--ok); }
+
+      .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .stats {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .metric strong { display: block; color: var(--ok); font-size: 1.2rem; }
-
-      ul { margin: 0; padding-left: 18px; }
-      li + li { margin-top: 7px; }
-      .muted { color: var(--muted); }
-
-      .timeline {
-        position: relative; list-style: none; margin: 0; padding: 0 0 0 24px;
+      .stat {
+        background: rgba(12, 39, 46, 0.56);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px;
+        text-align: center;
       }
 
-      .timeline::before {
-        content: ""; position: absolute; left: 7px; top: 2px; bottom: 2px;
-        width: 2px; background: linear-gradient(var(--brand), transparent);
+      .stat .num {
+        display: block;
+        font-weight: 800;
+        font-size: 1.3rem;
+        color: var(--ok);
       }
 
-      .timeline li {
-        position: relative; padding: 0 0 14px 0;
+      .footer {
+        margin-top: 18px;
+        text-align: center;
+        color: var(--muted);
+        padding: 20px;
       }
 
-      .timeline li::before {
-        content: ""; position: absolute; left: -20px; top: 6px;
-        width: 10px; height: 10px; border-radius: 50%; background: var(--brand);
+      .socials a {
+        color: #9dfff2;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 0 10px;
       }
 
-      .footer { margin-top: 18px; text-align: center; color: var(--muted); padding: 20px; }
-      .footer a { color: #9ffff2; font-weight: 700; text-decoration: none; margin: 0 9px; }
+      .socials a:hover { text-decoration: underline; }
 
-      .reveal { opacity: 0; transform: translateY(16px); animation: reveal .75s ease forwards; }
-      .reveal:nth-child(2) { animation-delay: .1s; }
-      .reveal:nth-child(3) { animation-delay: .2s; }
-      .reveal:nth-child(4) { animation-delay: .3s; }
-      .reveal:nth-child(5) { animation-delay: .4s; }
-
-      @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
-      @keyframes drift {
-        0% { transform: translate(0,0) scale(1) rotate(0deg); }
-        50% { transform: translate(2vmax,-2vmax) scale(1.05) rotate(20deg); }
-        100% { transform: translate(-2vmax,2vmax) scale(.95) rotate(-15deg); }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: in 0.75s ease forwards;
       }
 
-      @media (max-width: 900px) {
-        .two, .three { grid-template-columns: 1fr; }
+      .reveal:nth-child(2) { animation-delay: 0.12s; }
+      .reveal:nth-child(3) { animation-delay: 0.22s; }
+      .reveal:nth-child(4) { animation-delay: 0.32s; }
+      .reveal:nth-child(5) { animation-delay: 0.42s; }
+
+      @keyframes in { to { opacity: 1; transform: translateY(0); } }
+      @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes morph {
+        0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        50% { transform: translate(2vmax, -2vmax) scale(1.08) rotate(25deg); }
+        100% { transform: translate(-2vmax, 2vmax) scale(0.95) rotate(-20deg); }
+      }
+
+      @media (max-width: 860px) {
         .profile { grid-template-columns: 1fr; text-align: center; }
         .avatar { margin: 0 auto; }
-        .top { flex-direction: column; gap: 8px; }
+        .two-col { grid-template-columns: 1fr; }
+        .stats { grid-template-columns: 1fr; }
       }
     </style>
   </head>
+
   <body>
-    <div class="aurora"></div>
-    <div class="mesh"></div>
+    <div class="aurora-bg">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="noise"></div>
 
     <main class="wrap">
-      <header class="top glass reveal">
-        <div class="brand">Vikram Kamble</div>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#impact">Impact</a>
-          <a href="#delivery">Delivery</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
       <section class="hero glass reveal">
-        <span class="tag">Software Test Engineer • 5+ Years Experience</span>
-        <h1>Quality That Ships With Confidence</h1>
+        <h1>Vikram Kamble</h1>
         <p>
-          Manual + Automation testing expert focused on stable releases, strong risk coverage,
-          reliable regression suites, and fast feedback loops across web and mobile products.
+          Software Test Engineer with <strong>5+ years</strong> of experience in manual and automation testing,
+          delivering reliable, high-confidence releases across web and mobile platforms.
         </p>
-        <div class="cta">
+        <div class="cta-row">
           <a class="btn btn-primary" href="mailto:kvikramautomationtesting@gmail.com">Contact Me</a>
           <a class="btn btn-ghost" href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Visit Website</a>
         </div>
       </section>
 
-      <section id="about" class="section glass reveal">
-        <div class="profile">
-          <img class="avatar" src="color.png" alt="Portrait of Vikram Kamble" />
-          <div>
-            <h2>Professional Summary</h2>
-            <p class="muted">
-              5+ years of experience in Manual and Automation Testing across CloudOps Hyper-Automation
-              and Personal Digital Storage. Hands-on in BDD framework development from scratch using
-              POM, TestNG, Cucumber, Java, and Gherkin.
-            </p>
-            <ul class="pill-list">
-              <li>Selenium</li><li>TestNG</li><li>Cucumber</li><li>Java</li><li>Gherkin</li>
-              <li>Jenkins</li><li>GitHub Actions</li><li>Postman API Testing</li><li>JIRA</li>
-              <li>TestRail</li><li>SQL</li><li>AWS (Basic)</li>
-            </ul>
-          </div>
+      <section class="profile grid glass reveal">
+        <img class="avatar" src="color.png" alt="Portrait of Vikram Kamble" />
+        <div>
+          <h2>Professional Summary</h2>
+          <p>
+            5+ years in Manual and Automation Testing across CloudOps Hyper-Automation and Personal Digital Storage.
+            Strong in BDD framework development from scratch using POM, TestNG, Cucumber, Java, and Gherkin.
+          </p>
+          <ul class="pill-list">
+            <li>Selenium</li>
+            <li>TestNG</li>
+            <li>Cucumber</li>
+            <li>Java</li>
+            <li>Gherkin</li>
+            <li>Jenkins</li>
+            <li>GitHub Actions</li>
+            <li>Postman API Testing</li>
+            <li>JIRA</li>
+            <li>TestRail</li>
+            <li>SQL</li>
+            <li>AWS (Basic)</li>
+          </ul>
         </div>
       </section>
 
-      <section id="impact" class="grid three reveal">
-        <article class="metric glass"><strong>5+ Years</strong>Deep QA execution across web and mobile</article>
-        <article class="metric glass"><strong>End-to-End</strong>Manual + Automation ownership from planning to sign-off</article>
-        <article class="metric glass"><strong>CI-Driven</strong>Stable suite execution through Jenkins and GitHub Actions</article>
+      <section class="section glass reveal">
+        <h2>Impact Highlights</h2>
+        <div class="stats">
+          <div class="stat"><span class="num">5+ Years</span>QA delivery experience</div>
+          <div class="stat"><span class="num">End-to-End</span>Manual + automation ownership</div>
+          <div class="stat"><span class="num">CI Driven</span>Stable execution in pipelines</div>
+        </div>
       </section>
 
-      <section class="grid two reveal">
-        <article class="section glass">
-          <h2>Core Strengths</h2>
-          <ul>
-            <li>Requirement analysis with risk-based test planning</li>
-            <li>Functional, integration, system, regression, UAT, smoke, ad-hoc</li>
-            <li>REST API validation and end-to-end workflow verification</li>
-            <li>Defect triage and quality reporting with clear release insights</li>
-          </ul>
-        </article>
-        <article class="section glass">
-          <h2>Project Snapshot</h2>
-          <ul>
-            <li><strong>Domains:</strong> CloudOps Hyper-Automation, Personal Digital Storage</li>
-            <li><strong>Platforms:</strong> Web and Mobile</li>
-            <li><strong>Scope:</strong> UI + API + Regression + Non-functional checks</li>
-            <li><strong>Focus:</strong> reliability, defect prevention, release confidence</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="delivery" class="section glass reveal">
-        <h2>Delivery Engine</h2>
-        <ol class="timeline">
-          <li><strong>Analyze:</strong> convert requirements into coverage with priority and risk mapping.</li>
-          <li><strong>Build:</strong> design reusable automation architecture (POM + BDD + reporting).</li>
-          <li><strong>Validate:</strong> execute UI/API cycles, regression gates, and non-functional checks.</li>
-          <li><strong>Release:</strong> publish quality status, defect insights, and go/no-go recommendation.</li>
-        </ol>
-      </section>
-
-      <section id="contact" class="section glass reveal">
-        <h2>Training and Objective</h2>
-        <ul>
-          <li><strong>Training:</strong> Manual and Automation Testing - QSpiders Institute, Bangalore</li>
-          <li><strong>Objective:</strong> deliver stable, high-performance products through quality-first engineering</li>
-          <li><strong>Style:</strong> proactive ownership, precise communication, and execution discipline</li>
+      <section class="section glass reveal">
+        <h2>Roles and Responsibilities</h2>
+        <ul class="highlights">
+          <li><strong>Requirement Analysis:</strong> translate user stories into risk-based, traceable test coverage.</li>
+          <li><strong>Execution:</strong> system, integration, regression, UAT, smoke, ad-hoc, and API testing cycles.</li>
+          <li><strong>Automation:</strong> build and maintain scalable page-object based suites with BDD workflows.</li>
+          <li><strong>Defect Management:</strong> high-quality bug reporting in JIRA with clear RCA collaboration.</li>
+          <li><strong>Release Readiness:</strong> provide quality metrics and go/no-go recommendations.</li>
         </ul>
       </section>
 
+      <section class="section grid two-col glass reveal">
+        <article>
+          <h2>Project Snapshot</h2>
+          <ul class="highlights">
+            <li><strong>Domain:</strong> CloudOps Hyper-Automation, Personal Digital Storage</li>
+            <li><strong>Platforms:</strong> Web and Mobile</li>
+            <li><strong>Coverage:</strong> UI + API + Regression + Non-functional validations</li>
+            <li><strong>Outcome:</strong> improved release confidence and lower defect leakage</li>
+          </ul>
+        </article>
+        <article>
+          <h2>Training and Objective</h2>
+          <ul class="highlights">
+            <li><strong>Training:</strong> Manual and Automation Testing, QSpiders Institute, Bangalore</li>
+            <li><strong>Goal:</strong> deliver stable, scalable, and high-performance software through quality-first execution</li>
+            <li><strong>Approach:</strong> deep test design, reliable automation, and strong engineering collaboration</li>
+          </ul>
+        </article>
+      </section>
+
       <footer class="footer glass reveal">
-        <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
-        <a href="#" aria-label="Facebook profile">Facebook</a>
-        <a href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Website</a>
-        <div>© 2026 Vikram Kamble</div>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
+          <a href="#" aria-label="Facebook profile">Facebook</a>
+          <a href="https://vikramk780.github.io/mywebsite/" target="_blank" rel="noopener">Website</a>
+        </div>
+        <small>© 2026 Vikram Kamble</small>
       </footer>
     </main>
   </body>
 </html>
+
